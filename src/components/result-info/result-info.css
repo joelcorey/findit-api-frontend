@@ -1,0 +1,20 @@
+.bg-background-dark {
+    background-color: #272b33;
+    color: #c4cfe0;
+}
+
+.result-info {
+    display: flex;
+    font-family: Arial;
+    padding: .5vh;
+    margin: .5vh;
+}
+
+.result-info-date {
+    color: #596163;
+}
+
+.result-info-link {
+    color: #4284a6;
+    padding-left: 1%;
+}
