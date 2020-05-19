@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 
-import ResultInfo from './components/result-info/result-info';
+import CityStateContainer from './components/city-state-container/city-state-container';
 
 function App() {
 	return (
 		<div className="App">
 			
-			<ResultInfo />
-			
+			<CityStateContainer />
+
 		</div>
 	);
 }
