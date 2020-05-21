@@ -6,7 +6,12 @@ import CityTerritoryContainer from './components/city-territory-container/city-t
 function App() {
 	
 	const [ loading, setLoading ] = useState(true);
+	// Get how many cities are in each state, not entirely necessary
 	const [ counts, setCounts ] = useState();
+	// used to tell each cityTerritory that it is done loading when the currentTerritory changes
+	const [ currentTerritory, setCurrentTerritory ] = useState();
+	// master list of all cities, used to build category links per city
+	const [ cityLinks, setCityLinks ] = useState();
 
 	async function fetchCountsData() {
         // send HTTP request
@@ -16,7 +21,8 @@ function App() {
             headers: {"Content-Type": "application/json"}
         });
         const data = await response.json();
-        console.log(data);
+		console.log(data);
+		setCurrentTerritory(data[0].territory_name);
 		setCounts(data);
 		setLoading(false);
 	}
