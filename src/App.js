@@ -21,7 +21,7 @@ function App() {
             headers: {"Content-Type": "application/json"}
         });
         const data = await response.json();
-		console.log(data);
+		//console.log(data);
 		setCurrentTerritory(data[0].territory_name);
 		setCounts(data);
 		setLoading(false);
