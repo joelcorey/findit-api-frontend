@@ -5,8 +5,10 @@ import ResultInfo from '../result-info/result-info';
 
 const CityTerritoryContainer = (props) => {
 
-    const [ jobs, setJobs ] = useState([]);
+    //const [ jobs, setJobs ] = useState([]);
     const [ loading, setLoading ] = useState(true);
+    // master list of all cities, used to build category links per city
+    const [ cityLinks, setCityLinks ] = useState([]);
 
     // deprecated
     // async function fetchData() {
@@ -29,23 +31,37 @@ const CityTerritoryContainer = (props) => {
     //     fetchData();
     // }, [])
 
-    
+    // async function fetchStateData() {
+    //     // send HTTP request
+    //     const response = await fetch('http://localhost:8000/cities',
+    //     {
+    //         method: 'POST',
+    //         body: JSON.stringify({
+    //             state: "Oregon"
+    //         }),
+    //         // body: '{ "state": "Oregon" }'
+    //         headers: {"Content-Type": "application/json"}
+    //     });
+    //     const data = await response.json();
+    //     console.log(data);
+    //     setJobs(data);
+    // }
 
-    async function fetchStateData() {
+    async function fetchCitiesInStateData() {
         // send HTTP request
-        const response = await fetch('http://localhost:8000/cities',
+        const response = await fetch('http://localhost:8000/cities/links',
         {
-            method: 'POST',
-            body: JSON.stringify({
-                state: "Oregon"
-            }),
-            // body: '{ "state": "Oregon" }'
+			method: 'POST',
+			body: JSON.stringify({ state: props.territory }),
             headers: {"Content-Type": "application/json"}
         });
         const data = await response.json();
-        console.log(data);
-        setJobs(data);
-    }
+		setCityLinks(data);
+	}
+
+	useEffect(() => {
+		fetchCitiesInStateData();
+	}, [])
     
     // if (jobs.length !== 0) {
     //     return (

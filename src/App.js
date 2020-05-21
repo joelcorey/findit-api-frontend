@@ -28,8 +28,8 @@ function App() {
 	}
 
 	useEffect(() => {
-        fetchCountsData();
-    }, [])
+		fetchCountsData();
+	}, [])
 	
 	if(!loading) {
 		return (
