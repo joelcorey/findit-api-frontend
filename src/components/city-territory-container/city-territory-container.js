@@ -11,7 +11,7 @@ const CityTerritoryContainer = (props) => {
     const [ cityLinks, setCityLinks ] = useState([]);
     // Actual url's and other data of jobs
     const [ jobLinks, setJobLinks ] = useState([])
-    // Prevent infinite useEffect
+    // Prevent infinite useEffect by only firing fetchCityJobs if loadedNewCityLinks = true
     const [ loadedNewCityLinks, setLoadedNewCityLinks ] = useState(false);
 
     // Temp hard coded
@@ -23,11 +23,16 @@ const CityTerritoryContainer = (props) => {
 
     async function fetchCityJobs() {
         let container = [];
+        let object = {};
 
         cityLinks.map((city) => {
             categories.map((category) => {
-                let url = `${city.city_url}${category}`;
-                container.push(url);
+                object.name = city.city_name
+                object.url = `${city.city_url}${category}`;
+                object.territory = city.territory_name;
+                object.country = city.city_country
+                container.push(object);
+                object = {}
             })
         })    
         
