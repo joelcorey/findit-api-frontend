@@ -1,0 +1,32 @@
+.city-territory-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: .5vh;
+    margin: .5vh;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.city-territory-container-item {
+    padding: 0 2vh;
+    width: 10vw;
+}
+
+.city-territory-container-loading {
+    /* padding: 0 3vh; */
+}
+
+.city-territory-container-loading {
+    border: 5px solid #2d6374; 
+    border-top: 5px solid #d7d8da; 
+    border-radius: 50%;
+    width: 1vh;
+    height: 1vh;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -49,7 +49,7 @@ q:before, q:after {
   display: flex;
   flex-direction: column;
   background-color: #31363b;
-  height: 100vh;
+  height: 100%;
   margin: 0;
 }
 
