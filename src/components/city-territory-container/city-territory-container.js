@@ -7,45 +7,8 @@ const CityTerritoryContainer = (props) => {
 
     //const [ jobs, setJobs ] = useState([]);
     const [ loading, setLoading ] = useState(true);
-    // master list of all cities, used to build category links per city
+    // list of all cities in state, used to build category links per city
     const [ cityLinks, setCityLinks ] = useState([]);
-
-    // deprecated
-    // async function fetchData() {
-    //     // send HTTP request
-    //     const response = await fetch('http://localhost:8000/cities',
-    //     {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //             state: "Oregon"
-    //         }),
-    //         // body: '{ "state": "Oregon" }'
-    //         headers: {"Content-Type": "application/json"}
-    //     });
-    //     const data = await response.json();
-    //     console.log(data);
-    //     setJobs(data);
-    // }
-
-    // useEffect(() => {
-    //     fetchData();
-    // }, [])
-
-    // async function fetchStateData() {
-    //     // send HTTP request
-    //     const response = await fetch('http://localhost:8000/cities',
-    //     {
-    //         method: 'POST',
-    //         body: JSON.stringify({
-    //             state: "Oregon"
-    //         }),
-    //         // body: '{ "state": "Oregon" }'
-    //         headers: {"Content-Type": "application/json"}
-    //     });
-    //     const data = await response.json();
-    //     console.log(data);
-    //     setJobs(data);
-    // }
 
     async function fetchCitiesInStateData() {
         // send HTTP request
