@@ -11,13 +11,6 @@ const CityTerritoryContainer = (props) => {
     const [ cityLinks, setCityLinks ] = useState([]);
     // Actual url's and other data of jobs
     const [ jobLinks, setJobLinks ] = useState([])
-    
-    // Temp hard coded
-    const categories = [
-        "/d/software-qa-dba-etc/search/sof",  // software
-        "/d/web-html-info-design/search/web",  // web / info design
-        "/d/computer-gigs/search/cpg",  // gigs - computer 
-    ];
    
     let getCitiesInState = props.useFetch('http://localhost:8000/cities/links',
     {
@@ -25,12 +18,36 @@ const CityTerritoryContainer = (props) => {
         body: JSON.stringify({ state: props.territory }),
         headers: {"Content-Type": "application/json"}
     });
+
+    function categoryHelper(category) {
+
+        return category
+    }
     
     useEffect(() => {
         setCityLinks(getCitiesInState.response);
-        console.log(getCitiesInState)
-	})
-    
+    })
+
+    useEffect(() => {
+        setLoading(false);
+    }, [cityLinks])
+
+    if(!loading) {
+        let categories = props.categories
+        return (
+            <div className="city-territory-container" key={props.index}>
+                <div className="city-territory-container-header">
+                    <div className="city-territory-container-item">{props.territory}</div>
+                    <div className="city-territory-container-item">city count: {props.cityCount}</div>
+                </div>
+                <div className="city-territory-container-column">
+                    {categories.map((category) => {
+                        return <div className="city-territory-container-category">{category}</div>
+                    })}
+                </div>
+            </div>
+        )
+    }
     return (
         <div className="city-territory-container" key={props.index}>
             <div className="city-territory-container-loading"></div>

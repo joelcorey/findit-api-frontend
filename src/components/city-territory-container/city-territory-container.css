@@ -1,6 +1,5 @@
 .city-territory-container {
-    display: flex;
-    justify-content: flex-start;
+    
     padding: .5vh;
     margin: .5vh;
     border-style: solid;
@@ -8,9 +7,24 @@
     border-color: black;
 }
 
+.city-territory-container-header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.city-territory-container-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .city-territory-container-item {
     padding: 0 2vh;
     width: 10vw;
+}
+
+.city-territory-container-category {
+    padding: 0 2vh;
 }
 
 .city-territory-container-loading {
