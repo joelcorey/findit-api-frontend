@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+import useFetch from './hooks/use-fetch';
+
 function App() {
 	
 	const [ loading, setLoading ] = useState(true);
-	// Get how many cities are in each state, not entirely necessary
 	const [ counts, setCounts ] = useState();
 	const [ currentTerritory, setCurrentTerritory ] = useState();
 	const [ cityLinks, setCityLinks ] = useState();
@@ -16,43 +17,25 @@ function App() {
         "/d/computer-gigs/search/cpg",  // gigs - computer 
 	];
 	
-	async function fetchCountsData() {
-        // send HTTP request
-        const response = await fetch('http://localhost:8000/counts',
-			{
-				method: 'GET',
-				headers: {"Content-Type": "application/json"}
-			});
-        const data = await response.json();
-		//console.log(data);
-		setCurrentTerritory("Oregon")
-		setCounts(data);
-		
-		setLoading(false);
-		
-	}	
-
-	// Get list of cities to build necessary links for scraping
-	// Passed down as a prop
-    async function fetchCitiesInStateUrls() {
-        // send HTTP request
-        const response = await fetch('http://localhost:8000/cities/links',
-        {
-			method: 'POST',
-			body: JSON.stringify({ state: currentTerritory }),
-            headers: {"Content-Type": "application/json"}
-        });
-        const stateCityJobLinks = await response.json();
-        setCityLinks(stateCityJobLinks);
-	}
-
+	const getCounts = useFetch('http://localhost:8000/counts',
+	{
+		method: 'GET',
+		headers: {"Content-Type": "application/json"}
+	});
+	
+	const getCitiesInState = useFetch('http://localhost:8000/cities/links',
+	{
+		method: 'POST',
+		body: JSON.stringify({ state: currentTerritory }),
+		headers: {"Content-Type": "application/json"}
+	});
+	
 	useEffect(() => {
-		fetchCountsData();
-	}, [])
-
-	useEffect(() => {
-		fetchCitiesInStateUrls();
-	}, [counts])
+		setCounts(getCounts.response);
+		if(counts) {
+			setCurrentTerritory(counts[0].territory_name)
+		}
+	}, [getCounts])
 
 	return (
 		<div>this is a div</div>
