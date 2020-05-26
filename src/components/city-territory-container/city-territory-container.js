@@ -10,6 +10,7 @@ const CityTerritoryContainer = (props) => {
     // list of all cities in state, used to build category links per city
     const [ cityLinks, setCityLinks ] = useState();
     // Actual url's and other data of jobs
+    const [ cityLinksWithCategories, setCityLinksWithCategories ] = useState();
     const [ jobLinks, setJobLinks ] = useState()
    
     let getCitiesInState = props.useFetch('http://localhost:8000/cities/links',
@@ -46,7 +47,7 @@ const CityTerritoryContainer = (props) => {
 
     useEffect(() => {
         // add categories to newCityLinks
-        if(cityLinks) setJobLinks(categoryHelper());
+        if(cityLinks) setCityLinksWithCategories(categoryHelper());
         // make cityLinks = newCityLinks
     }, [cityLinks])
 
