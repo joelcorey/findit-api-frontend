@@ -1,56 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-import CityTerritoryContainer from './components/city-territory-container/city-territory-container';
-
 function App() {
 	
 	const [ loading, setLoading ] = useState(true);
 	// Get how many cities are in each state, not entirely necessary
 	const [ counts, setCounts ] = useState();
-	// used to tell each cityTerritory that it is done loading when the currentTerritory changes
 	const [ currentTerritory, setCurrentTerritory ] = useState();
-	// master list of all cities, used to build category links per city
 	const [ cityLinks, setCityLinks ] = useState();
 
+	 // Temp hard coded
+	 const categories = [
+        "/d/software-qa-dba-etc/search/sof",  // software
+        "/d/web-html-info-design/search/web",  // web / info design
+        "/d/computer-gigs/search/cpg",  // gigs - computer 
+	];
+	
 	async function fetchCountsData() {
         // send HTTP request
         const response = await fetch('http://localhost:8000/counts',
-        {
-            method: 'GET',
-            headers: {"Content-Type": "application/json"}
-        });
+			{
+				method: 'GET',
+				headers: {"Content-Type": "application/json"}
+			});
         const data = await response.json();
 		//console.log(data);
-		setCurrentTerritory(data[0].territory_name);
+		setCurrentTerritory("Oregon")
 		setCounts(data);
+		
 		setLoading(false);
+		
+	}	
+
+	// Get list of cities to build necessary links for scraping
+	// Passed down as a prop
+    async function fetchCitiesInStateUrls() {
+        // send HTTP request
+        const response = await fetch('http://localhost:8000/cities/links',
+        {
+			method: 'POST',
+			body: JSON.stringify({ state: currentTerritory }),
+            headers: {"Content-Type": "application/json"}
+        });
+        const stateCityJobLinks = await response.json();
+        setCityLinks(stateCityJobLinks);
 	}
 
 	useEffect(() => {
 		fetchCountsData();
 	}, [])
-	
-	if(!loading) {
-		return (
-			<div className="App">
-	
-				{counts.map((state, i) => 
-					<CityTerritoryContainer 
-						index={i}
-						country={state.city_country}
-						territory={state.territory_name}
-						cityCount={state.total}
-					/>
-				)}
-				
-			</div>
-		);
-	}
+
+	useEffect(() => {
+		fetchCitiesInStateUrls();
+	}, [counts])
+
 	return (
-		<div className="App">Loading</div>
-	)
-	
+		<div>this is a div</div>
+	);
 }
 
 export default App;
