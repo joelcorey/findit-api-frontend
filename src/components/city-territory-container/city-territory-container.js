@@ -11,78 +11,26 @@ const CityTerritoryContainer = (props) => {
     const [ cityLinks, setCityLinks ] = useState([]);
     // Actual url's and other data of jobs
     const [ jobLinks, setJobLinks ] = useState([])
-    // Prevent infinite useEffect by only firing fetchCityJobs if loadedNewCityLinks = true
-    const [ loadedNewCityLinks, setLoadedNewCityLinks ] = useState(false);
-
+    
     // Temp hard coded
     const categories = [
         "/d/software-qa-dba-etc/search/sof",  // software
         "/d/web-html-info-design/search/web",  // web / info design
         "/d/computer-gigs/search/cpg",  // gigs - computer 
     ];
-
-    async function fetchCityJobs() {
-        let container = [];
-        let object = {};
-
-        cityLinks.map((city) => {
-            categories.map((category) => {
-                object.name = city.city_name
-                object.url = `${city.city_url}${category}`;
-                object.territory = city.territory_name;
-                object.country = city.city_country
-                container.push(object);
-                object = {}
-            })
-        })    
-        
-        console.log(container)
-        setJobLinks(container);
-        setLoadedNewCityLinks(true)
-	}
-
-
-    async function fetchCitiesInStateData() {
-        // send HTTP request
-        const response = await fetch('http://localhost:8000/cities/links',
-        {
-			method: 'POST',
-			body: JSON.stringify({ state: props.territory }),
-            headers: {"Content-Type": "application/json"}
-        });
-        const data = await response.json();
-        setCityLinks(data);
-        fetchCityJobs();
-    }
-    
-	useEffect(() => {
-		fetchCitiesInStateData();
-    }, [])
+   
+    let getCitiesInState = props.useFetch('http://localhost:8000/cities/links',
+    {
+        method: 'POST',
+        body: JSON.stringify({ state: props.territory }),
+        headers: {"Content-Type": "application/json"}
+    });
     
     useEffect(() => {
-		fetchCitiesInStateData();
-	}, [ loadedNewCityLinks ])
+        setCityLinks(getCitiesInState.response);
+        console.log(getCitiesInState)
+	})
     
-    // if (jobs.length !== 0) {
-    //     return (
-    //         <div className="city-state-container">
-    //             {jobs.map((job, i) => 
-    //                 <ResultInfo
-    //                     index={i}
-    //                     title={job.resultTitleText}
-    //                     href={job.resultTitleHref}
-    //                     // dateTitle={job.date.dateTitle}
-    //                     // dateString={job.date.dateString}
-    //                     // timeString={job.date.timeString}
-    //                     // year={job.date.year}
-    //                     // month={job.date.month}
-    //                     // day={job.date.day}
-    //                 />
-    //             )}
-                    
-    //         </div>
-    //     );
-    // }
     return (
         <div className="city-territory-container" key={props.index}>
             <div className="city-territory-container-loading"></div>

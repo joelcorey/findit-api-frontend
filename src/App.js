@@ -3,12 +3,12 @@ import './App.css';
 
 import useFetch from './hooks/use-fetch';
 
+import CityTerritoryContainer from './components/city-territory-container/city-territory-container';
+
 function App() {
 	
 	const [ loading, setLoading ] = useState(true);
 	const [ counts, setCounts ] = useState();
-	const [ currentTerritory, setCurrentTerritory ] = useState();
-	const [ cityLinks, setCityLinks ] = useState();
 
 	 // Temp hard coded
 	 const categories = [
@@ -22,23 +22,34 @@ function App() {
 		method: 'GET',
 		headers: {"Content-Type": "application/json"}
 	});
-	
-	const getCitiesInState = useFetch('http://localhost:8000/cities/links',
-	{
-		method: 'POST',
-		body: JSON.stringify({ state: currentTerritory }),
-		headers: {"Content-Type": "application/json"}
-	});
-	
+		
 	useEffect(() => {
 		setCounts(getCounts.response);
 		if(counts) {
-			setCurrentTerritory(counts[0].territory_name)
+			setLoading(false)
 		}
 	}, [getCounts])
 
+	if(!loading) {
+		return (
+			<div className="App">
+	
+				{counts.map((state, i) => 
+					<CityTerritoryContainer 
+						index={i}
+						country={state.city_country}
+						territory={state.territory_name}
+						cityCount={state.total}
+						categories={categories}
+						useFetch={useFetch}
+					/>
+				)}
+				
+			</div>
+		);
+	}
 	return (
-		<div>this is a div</div>
+		<div className="fullscreen-loading">Loading...</div>
 	);
 }
 
