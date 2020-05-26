@@ -8,9 +8,9 @@ const CityTerritoryContainer = (props) => {
     //const [ jobs, setJobs ] = useState([]);
     const [ loading, setLoading ] = useState(true);
     // list of all cities in state, used to build category links per city
-    const [ cityLinks, setCityLinks ] = useState([]);
+    const [ cityLinks, setCityLinks ] = useState();
     // Actual url's and other data of jobs
-    const [ jobLinks, setJobLinks ] = useState([])
+    const [ jobLinks, setJobLinks ] = useState()
    
     let getCitiesInState = props.useFetch('http://localhost:8000/cities/links',
     {
@@ -19,9 +19,25 @@ const CityTerritoryContainer = (props) => {
         headers: {"Content-Type": "application/json"}
     });
 
-    function categoryHelper(category) {
+    function categoryHelper() {
+        let categories = props.categories;
+        let newCityLinks = [];
+        let newCityLink = {};
 
-        return category
+        cityLinks.map(cityLink => {
+            categories.map(category => {
+                newCityLink.city_url = `${cityLink.city_url}${category}`
+                newCityLink.city_name = cityLink.city_name;
+                newCityLink.territory_name = cityLink.territory_name;
+                newCityLink.city_country = cityLink.city_country;
+                newCityLinks.push(newCityLink);
+                newCityLink = {};
+
+            })
+            
+        })
+        
+        return newCityLinks;
     }
     
     useEffect(() => {
@@ -29,11 +45,16 @@ const CityTerritoryContainer = (props) => {
     })
 
     useEffect(() => {
-        setLoading(false);
+        // add categories to newCityLinks
+        if(cityLinks) setJobLinks(categoryHelper());
+        // make cityLinks = newCityLinks
     }, [cityLinks])
 
+    useEffect(() => {
+        setLoading(false);
+    }, [jobLinks])
+
     if(!loading) {
-        let categories = props.categories
         return (
             <div className="city-territory-container" key={props.index}>
                 <div className="city-territory-container-header">
@@ -41,18 +62,22 @@ const CityTerritoryContainer = (props) => {
                     <div className="city-territory-container-item">city count: {props.cityCount}</div>
                 </div>
                 <div className="city-territory-container-column">
-                    {categories.map((category) => {
+
+                    {props.categories.map((category) => {
                         return <div className="city-territory-container-category">{category}</div>
                     })}
+
                 </div>
             </div>
         )
     }
     return (
         <div className="city-territory-container" key={props.index}>
-            <div className="city-territory-container-loading"></div>
-            <div className="city-territory-container-item">{props.territory}</div>
-            <div className="city-territory-container-item">city count: {props.cityCount}</div>
+            <div className="city-territory-container-header">
+                <div className="city-territory-container-loading" />
+                <div className="city-territory-container-item">{props.territory}</div>
+                <div className="city-territory-container-item">city count: {props.cityCount}</div>
+            </div>
         </div>
     )
     
