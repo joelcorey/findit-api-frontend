@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './city-territory-container.css';
 
-import ResultInfo from '../result-info/result-info';
-
 const CityTerritoryContainer = (props) => {
 
     //const [ jobs, setJobs ] = useState([]);
@@ -31,13 +29,11 @@ const CityTerritoryContainer = (props) => {
                 newCityLink.city_name = cityLink.city_name;
                 newCityLink.territory_name = cityLink.territory_name;
                 newCityLink.city_country = cityLink.city_country;
+                newCityLink.category = category;
                 newCityLinks.push(newCityLink);
                 newCityLink = {};
-
             })
-            
         })
-        
         return newCityLinks;
     }
     
@@ -47,13 +43,12 @@ const CityTerritoryContainer = (props) => {
 
     useEffect(() => {
         // add categories to newCityLinks
-        if(cityLinks) setCityLinksWithCategories(categoryHelper());
+        if(cityLinks) {
+            setCityLinksWithCategories(categoryHelper());
+            setLoading(false);
+        }
         // make cityLinks = newCityLinks
     }, [cityLinks])
-
-    useEffect(() => {
-        setLoading(false);
-    }, [jobLinks])
 
     if(!loading) {
         return (
@@ -64,9 +59,7 @@ const CityTerritoryContainer = (props) => {
                 </div>
                 <div className="city-territory-container-column">
 
-                    {props.categories.map((category) => {
-                        return <div className="city-territory-container-category">{category}</div>
-                    })}
+                    {}
 
                 </div>
             </div>
