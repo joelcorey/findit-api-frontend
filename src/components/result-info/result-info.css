@@ -27,4 +27,9 @@
 .result-info-link a{
     color: #4284a6;
     padding-left: 1%;
+    
+}
+
+.result-info-link a:visited {
+    outline: none;
 }
