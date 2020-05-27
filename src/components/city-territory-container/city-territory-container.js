@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './city-territory-container.css';
 
+import CityContainer from '../city-container/city-container';
+
 const CityTerritoryContainer = (props) => {
 
     //const [ jobs, setJobs ] = useState([]);
@@ -59,7 +61,19 @@ const CityTerritoryContainer = (props) => {
                 </div>
                 <div className="city-territory-container-column">
 
-                    {}
+                    {cityLinksWithCategories.map((city, i) => {
+
+                        return (
+                            <CityContainer 
+                                territory={city.territory_name}
+                                city={city.city_name}
+                                url={city.city_url}
+                                category={city.category}
+                                useFetch={props.useFetch}
+                                currentTerritory = "Alabama"
+                            />
+                        )
+                    })}
 
                 </div>
             </div>

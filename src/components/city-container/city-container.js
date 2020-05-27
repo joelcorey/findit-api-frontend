@@ -9,17 +9,27 @@ const CityTerritoryContainer = (props) => {
     const [ loading, setLoading ] = useState(true);
     // 
     const [ jobs, setJobs ] = useState()
-   
-    let getCityJobs= props.useFetch('http://localhost:8000/jobs',
-    {
+    const [ isCurrentState, setIsCurrentState ] = useState(false);
+
+    let getCityJobs;
+    
+        getCityJobs = props.useFetch('http://localhost:8000/jobs',
+        {
         method: 'POST',
         body: JSON.stringify({ url: props.url }),
         headers: {"Content-Type": "application/json"}
-    });
-    
+        });
+    }
+
     useEffect(() => {
-        setJobs(getCitiesJobs.response);
-    })
+        if (props.currentState === props.territory) {
+            setIsCurrentState(true)
+        }
+    } )
+
+    useEffect(() => {
+        setJobs(getCityJobs.response);
+    }, [isCurrentState] )
 
     if(!loading) {
         return (
