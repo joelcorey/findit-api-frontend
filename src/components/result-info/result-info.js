@@ -5,8 +5,8 @@ const ResultInfo = (props) => {
    
     return (
         <div className="result-info bg-background-dark" key={props.index}>
-            <div className="result-info-date">{props.month} {props.year} {props.day}</div>
-            <div className="result-info-link"><a href={props.url}>{props.title}</a></div>
+            <div className="result-info-date">{props.month}-{props.day}-{props.year}</div>
+            <div className="result-info-item result-info-link"><a href={props.url} target="_blank">{props.title}</a></div>
         </div>
     );
 }

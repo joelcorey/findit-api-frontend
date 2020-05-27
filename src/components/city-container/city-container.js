@@ -58,8 +58,11 @@ const CityTerritoryContainer = (props) => {
     }
 
     return (
-        <div>
+        <div className="city-header">
             <div className="city-loading" />
+            <div className="city-header-item">{props.territory}</div>
+            <div className="city-header-item">{props.city}</div>
+            <div className="city-header-item">{props.url}</div>
         </div>
     )
     

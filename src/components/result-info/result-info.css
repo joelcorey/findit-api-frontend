@@ -10,6 +10,11 @@
     margin: .5vh;
 }
 
+.result-info-item {
+    width: 100%;
+    display: flex;
+}
+
 .result-info-date {
     color: #596163;
 }
