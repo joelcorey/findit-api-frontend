@@ -1,5 +1,5 @@
-## Frontend
-The frontend for this project can be found at:  
+## Backend
+The backend for this project can be found at:  
 https://github.com/joelcorey/findit-api
 
 ## Available Scripts
