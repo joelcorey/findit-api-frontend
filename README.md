@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Frontend
+The frontend for this project can be found at:  
+https://github.com/joelcorey/findit-api
 
 ## Available Scripts
 
