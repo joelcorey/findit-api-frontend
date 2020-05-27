@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './city-container.css';
+import moment from 'moment';
 
 import ResultInfo from '../result-info/result-info';
 
@@ -8,6 +9,12 @@ const CityTerritoryContainer = (props) => {
     const [ loading, setLoading ] = useState(true)
     const [ jobs, setJobs ] = useState()
     const [ isCurrentState, setIsCurrentState ] = useState();
+
+    const daysInPast = 10
+    const momentTime = moment();
+    const momentYear  = momentTime.format('YYYY');
+    const momentMonth = momentTime.format('M');
+    const momentDay   = momentTime.format('D');
     
     let getCityJobs;
 
@@ -21,9 +28,14 @@ const CityTerritoryContainer = (props) => {
         
     }
 
-    useEffect(() => {
-
-    })
+    function compareDates(year, month, day) {
+        let momentDate = moment([momentYear, momentMonth, momentDay]);
+        let jobDate = moment([year, month, day]);
+    
+        let difference = momentDate.diff(jobDate, 'days')
+    
+        return difference
+      }
 
     useEffect(() => {
         setJobs(getCityJobs.response);
@@ -40,7 +52,8 @@ const CityTerritoryContainer = (props) => {
                 </div>
                 <div>
                     {jobs.map((job, i) => {
-                        return <ResultInfo 
+                        if (compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast ) {
+                            return <ResultInfo 
                             key={i}
                             title={job.resultTitleText}
                             url={job.resultTitleHref}
@@ -51,6 +64,8 @@ const CityTerritoryContainer = (props) => {
                             month={job.date.month}
                             day={job.date.day}
                         />
+                        }
+                       
                     })}
                 </div>
             </>

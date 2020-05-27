@@ -66,6 +66,7 @@ const CityTerritoryContainer = (props) => {
                                 category={city.category}
                                 useFetch={props.useFetch}
                                 currentTerritory = "Alabama"
+                                past={props.past}
                             />
                         )
                     })}

@@ -16,6 +16,9 @@ function App() {
         "/d/web-html-info-design/search/web",  // web / info design
         "/d/computer-gigs/search/cpg",  // gigs - computer 
 	];
+
+	// Temp hard coded
+	const daysInToPast = 10;
 	
 	const getCounts = useFetch('http://localhost:8000/counts',
 	{
@@ -41,6 +44,7 @@ function App() {
 						territory={state.territory_name}
 						cityCount={state.total}
 						categories={categories}
+						past={daysInToPast}
 						useFetch={useFetch}
 					/>
 				)}
