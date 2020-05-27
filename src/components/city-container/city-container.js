@@ -10,7 +10,7 @@ const CityTerritoryContainer = (props) => {
     const [ jobs, setJobs ] = useState()
     const [ isCurrentState, setIsCurrentState ] = useState();
 
-    const daysInPast = 10
+    const daysInPast = 3
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
     const momentMonth = momentTime.format('M');
@@ -71,13 +71,13 @@ const CityTerritoryContainer = (props) => {
             </>
         )
     }
-
     return (
         <div className="city-header">
             <div className="city-loading" />
             <div className="city-header-item">{props.territory}</div>
             <div className="city-header-item">{props.city}</div>
             <div className="city-header-item">{props.url}</div>
+            {/* <div className="no-result-info-item">No results found</div> */}
         </div>
     )
     
