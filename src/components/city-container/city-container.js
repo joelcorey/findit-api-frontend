@@ -33,9 +33,11 @@ const CityTerritoryContainer = (props) => {
     if(!loading && jobs !== null) {
         return (
             <>
-                <div>{props.territory}</div>
-                <div>{props.city}</div>
-                <div>{props.url}</div>
+                <div className="city-header">
+                    <div className="city-header-item">{props.territory}</div>
+                    <div className="city-header-item">{props.city}</div>
+                    <div className="city-header-item">{props.url}</div>
+                </div>
                 <div>
                     {jobs.map((job, i) => {
                         return <ResultInfo 
@@ -57,7 +59,7 @@ const CityTerritoryContainer = (props) => {
 
     return (
         <div>
-            loading
+            <div className="city-loading" />
         </div>
     )
     

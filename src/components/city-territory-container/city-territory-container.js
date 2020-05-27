@@ -55,14 +55,9 @@ const CityTerritoryContainer = (props) => {
     if(!loading) {
         return (
             <div className="city-territory-container" key={props.index}>
-                <div className="city-territory-container-header">
-                    <div className="city-territory-container-item">{props.territory}</div>
-                    <div className="city-territory-container-item">city count: {props.cityCount}</div>
-                </div>
                 <div className="city-territory-container-column">
 
                     {cityLinksWithCategories.map((city, i) => {
-
                         return (
                             <CityContainer 
                                 territory={city.territory_name}
@@ -74,7 +69,6 @@ const CityTerritoryContainer = (props) => {
                             />
                         )
                     })}
-
                 </div>
             </div>
         )
