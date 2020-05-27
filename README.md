@@ -7,6 +7,9 @@ https://github.com/joelcorey/findit-api
 ## Why?
 In development: Port old PHP Craigslist web scraper to Node/JavaScript using Puppeteer.
 
+### Todo for both frontend and backend
+https://trello.com/b/nYBzDmmj/findit-api  
+  
 ## Available Scripts
 
 In the project directory, you can run:
