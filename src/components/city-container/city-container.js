@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './city-container.css';
 import moment from 'moment';
+import filters from '../../util/filters'
 
 import ResultInfo from '../result-info/result-info';
 
@@ -10,7 +11,7 @@ const CityTerritoryContainer = (props) => {
     const [ jobs, setJobs ] = useState()
     const [ isCurrentState, setIsCurrentState ] = useState();
 
-    const daysInPast = 3
+    const daysInPast = 1
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
     const momentMonth = momentTime.format('M');
@@ -35,7 +36,16 @@ const CityTerritoryContainer = (props) => {
         let difference = momentDate.diff(jobDate, 'days')
     
         return difference
-      }
+    }
+
+    function checkFilters(jobTitle) {
+        // filters.map(filter => {
+        //     return jobTitle.includes(filter);
+        // })
+
+        // temp hardcode bypass
+        return true
+    }
 
     useEffect(() => {
         setJobs(getCityJobs.response);
@@ -52,7 +62,10 @@ const CityTerritoryContainer = (props) => {
                 </div>
                 <div>
                     {jobs.map((job, i) => {
-                        if (compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast ) {
+                        if (
+                            compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast &&
+                            checkFilters(job.resultTitleText)
+                        ) {
                             return <ResultInfo 
                             key={i}
                             title={job.resultTitleText}
