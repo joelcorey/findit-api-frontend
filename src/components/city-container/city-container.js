@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './city-container.css';
 import moment from 'moment';
-import filters from '../../util/filters'
+
+import filters from '../../util/filters';
+import keywords from '../../util/keywords';
 
 import ResultInfo from '../result-info/result-info';
 
@@ -39,8 +41,8 @@ const CityTerritoryContainer = (props) => {
     }
 
     function checkFilters(jobTitle) {
-        // filters.map(filter => {
-        //     return jobTitle.includes(filter);
+        // keywords.map(keyword => {
+        //     return jobTitle.includes(keyword);
         // })
 
         // temp hardcode bypass
@@ -58,7 +60,7 @@ const CityTerritoryContainer = (props) => {
                 <div className="city-header">
                     <div className="city-header-item">{props.territory}</div>
                     <div className="city-header-item">{props.city}</div>
-                    <div className="city-header-item">{props.url}</div>
+                    <div className="city-header-item city-header-url">{props.url}</div>
                 </div>
                 <div>
                     {jobs.map((job, i) => {
@@ -89,7 +91,7 @@ const CityTerritoryContainer = (props) => {
             <div className="city-loading" />
             <div className="city-header-item">{props.territory}</div>
             <div className="city-header-item">{props.city}</div>
-            <div className="city-header-item">{props.url}</div>
+            <div className="city-header-item city-header-url">{props.url}</div>
             {/* <div className="no-result-info-item">No results found</div> */}
         </div>
     )

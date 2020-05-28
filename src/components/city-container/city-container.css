@@ -5,6 +5,12 @@
 
 .city-header-item {
     padding: 0 2vh;
+    min-width: 15%;
+}
+
+.city-header-url {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .city-loading {
