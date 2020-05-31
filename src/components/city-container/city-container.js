@@ -13,12 +13,13 @@ const CityTerritoryContainer = (props) => {
     const [ jobs, setJobs ] = useState()
     const [ isCurrentState, setIsCurrentState ] = useState();
 
-    const daysInPast = 0
+    const daysInPast = 2;
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
     const momentMonth = momentTime.format('M');
     const momentDay   = momentTime.format('D');
-    
+    const momentTimeString = moment(`${momentYear}-${momentMonth}-${momentDay}`, 'YYYY-MM-DD');
+
     let getCityJobs;
 
     if(props.currentState === props.territor) {
@@ -32,12 +33,13 @@ const CityTerritoryContainer = (props) => {
     }
 
     function compareDates(year, month, day) {
-        let momentDate = moment([momentYear, momentMonth, momentDay]);
-        let jobDate = moment([year, month, day]);
-    
-        let difference = momentDate.diff(jobDate, 'days')
-    
-        return difference
+        
+        
+        let difference = momentTimeString.diff(moment(`${year}-${month}-${day}`, 'YYYY-MM-DD'))
+
+        console.log(difference);
+
+        return difference;
     }
 
     function checkFilters(jobTitle) {
@@ -65,20 +67,20 @@ const CityTerritoryContainer = (props) => {
                 <div>
                     {jobs.map((job, i) => {
                         if (
-                            compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast &&
-                            checkFilters(job.resultTitleText)
+                            compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast 
+                            // && checkFilters(job.resultTitleText)
                         ) {
                             return <ResultInfo 
-                            key={i}
-                            title={job.resultTitleText}
-                            url={job.resultTitleHref}
-                            dateTitle={job.date.dateTitle}
-                            dateString={job.date.dateString}
-                            timeString={job.date.timeString}
-                            year={job.date.year}
-                            month={job.date.month}
-                            day={job.date.day}
-                        />
+                                key={i}
+                                title={job.resultTitleText}
+                                url={job.resultTitleHref}
+                                dateTitle={job.date.dateTitle}
+                                dateString={job.date.dateString}
+                                timeString={job.date.timeString}
+                                year={job.date.year}
+                                month={job.date.month}
+                                day={job.date.day}
+                            />
                         }
                        
                     })}

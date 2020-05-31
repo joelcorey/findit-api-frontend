@@ -10,7 +10,6 @@ function filter() {
     'Small business owner? We build websites and handle social media',
     'Any ladies or couples with webcams please get in touch',
     'Make !!!$2-$5K!!! In Residuals+Per Month PT (Telecommute)',
-    'Webcam Models Required',
     'Have a spare room in your home? Get paid daily',
     'Are you a Website designer looking for office Space with no  rent',
     'Best Take Surveys Website!',

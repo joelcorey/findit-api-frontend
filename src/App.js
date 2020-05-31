@@ -37,8 +37,8 @@ function App() {
 		//"/d/security/search/sec", // security
 		//"/d/skilled-trades-artisan/search/trd", // skilled trade - artisan
 		"/d/software-qa-dba-etc/search/sof",  // software - qa - dba - etc
-		"/d/systems-networking/search/sad", // systems - networking
-		"/d/technical-support/search/tch", // technical support
+		//"/d/systems-networking/search/sad", // systems - networking
+		//"/d/technical-support/search/tch", // technical support
 		//"/d/transportation/search/trp", // transport
 		//"/d/tv-film-video-radio/search/tfr", // tv - film - video - radio
 		"/d/web-html-info-design/search/web",  // web - info design
