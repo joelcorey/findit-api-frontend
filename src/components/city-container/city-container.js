@@ -35,7 +35,7 @@ const CityTerritoryContainer = (props) => {
     function compareDates(year, month, day) {
         
         
-        let difference = momentTimeString.diff(moment(`${year}-${month}-${day}`, 'YYYY-MM-DD'))
+        let difference = momentTimeString.diff(moment(`${year}-${month}-${day}`, 'YYYY-MM-DD'), 'days')
 
         console.log(difference);
 
