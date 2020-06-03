@@ -13,7 +13,7 @@ const CityTerritoryContainer = (props) => {
     const [ jobs, setJobs ] = useState()
     const [ isCurrentState, setIsCurrentState ] = useState();
 
-    const daysInPast = 2;
+    const daysInPast = 10;
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
     const momentMonth = momentTime.format('M');
@@ -37,18 +37,18 @@ const CityTerritoryContainer = (props) => {
         
         let difference = momentTimeString.diff(moment(`${year}-${month}-${day}`, 'YYYY-MM-DD'), 'days')
 
-        console.log(difference);
+        //console.log(difference);
 
         return difference;
     }
 
     function checkFilters(jobTitle) {
-        // keywords.map(keyword => {
-        //     return jobTitle.includes(keyword);
-        // })
-
-        // temp hardcode bypass
-        return true
+        for (let i = 0; i < keywords.length; i++) {
+            if(jobTitle.includes(keywords[i])) {
+                return true
+            }
+        }
+        return false;
     }
 
     useEffect(() => {
@@ -68,7 +68,7 @@ const CityTerritoryContainer = (props) => {
                     {jobs.map((job, i) => {
                         if (
                             compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast 
-                            // && checkFilters(job.resultTitleText)
+                            && checkFilters(job.resultTitleText)
                         ) {
                             return <ResultInfo 
                                 key={i}
