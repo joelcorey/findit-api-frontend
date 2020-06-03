@@ -13,7 +13,7 @@ const CityTerritoryContainer = (props) => {
     const [ jobs, setJobs ] = useState()
     const [ isCurrentState, setIsCurrentState ] = useState();
 
-    const daysInPast = 1;
+    const daysInPast = 10;
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
     const momentMonth = momentTime.format('M');
@@ -25,21 +25,15 @@ const CityTerritoryContainer = (props) => {
     if(props.currentState === props.territor) {
         getCityJobs = props.useFetch('http://localhost:8000/jobs',
         {
-        method: 'POST',
-        body: JSON.stringify({ url: props.url }),
-        headers: {"Content-Type": "application/json"}
+            method: 'POST',
+            body: JSON.stringify({ url: props.url }),
+            headers: {"Content-Type": "application/json"}
         });
         
     }
 
     function compareDates(year, month, day) {
-        
-        
-        let difference = momentTimeString.diff(moment(`${year}-${month}-${day}`, 'YYYY-MM-DD'), 'days')
-
-        //console.log(difference);
-
-        return difference;
+        return momentTimeString.diff(moment(`${year}-${month}-${day}`, 'YYYY-MM-DD'), 'days')
     }
 
     function checkFilters(jobTitle) {
@@ -49,7 +43,6 @@ const CityTerritoryContainer = (props) => {
             }
         }
         return false;
-        //return jobTitle.includes(keywords)
     }
 
     useEffect(() => {
