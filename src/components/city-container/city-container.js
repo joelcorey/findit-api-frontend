@@ -13,7 +13,7 @@ const CityTerritoryContainer = (props) => {
     const [ jobs, setJobs ] = useState()
     const [ isCurrentState, setIsCurrentState ] = useState();
 
-    const daysInPast = 10;
+    const daysInPast = 1;
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
     const momentMonth = momentTime.format('M');
@@ -49,6 +49,7 @@ const CityTerritoryContainer = (props) => {
             }
         }
         return false;
+        //return jobTitle.includes(keywords)
     }
 
     useEffect(() => {

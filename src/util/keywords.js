@@ -2,14 +2,11 @@ function keywords() {
     return [
         "api",
         "app",
-        "associate",
         "automation",
-        "cloud",
         
         "html",
         "css",
         "dev",
-        "gatsby",
         
         "integration",
         "javascript",
@@ -20,6 +17,7 @@ function keywords() {
         "progressive",
         "pwa",
         "react",
+        "gatsby",
         "vue",
       
         "remote",
