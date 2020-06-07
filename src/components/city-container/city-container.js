@@ -20,7 +20,7 @@ const CityTerritoryContainer = (props) => {
     const momentDay   = momentTime.format('D');
     const momentTimeString = moment(`${momentYear}-${momentMonth}-${momentDay}`, 'YYYY-MM-DD');
 
-    let getCityJobs;
+    let getCityJobs = [];
 
     if(props.currentState === props.territor) {
         getCityJobs = props.useFetch('http://localhost:8000/jobs',
@@ -38,7 +38,7 @@ const CityTerritoryContainer = (props) => {
 
     function checkFilters(jobTitle) {
         for (let i = 0; i < filters.length; i++) {
-            if(!jobTitle.includes(filters[i])) {
+            if(typeof jobTitle.includes === 'function' && jobTitle.includes(filters[i])) {
                 return true
             }
         }
@@ -47,7 +47,7 @@ const CityTerritoryContainer = (props) => {
 
     function checkKeywords(jobTitle) {
         for (let i = 0; i < keywords.length; i++) {
-            if(jobTitle.includes(keywords[i])) {
+            if(typeof jobTitle.includes === 'function' && jobTitle.includes(keywords[i])) {
                 return true
             }
         }
