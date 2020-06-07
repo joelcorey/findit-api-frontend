@@ -39,7 +39,6 @@ const CityTerritoryContainer = (props) => {
     function checkFilters(jobTitle) {
         for (let i = 0; i < filters.length; i++) {
             if(typeof jobTitle.includes === 'function' && jobTitle.includes(filters[i])) {
-                console.log(`jobTitle: ${jobTitle} supposed to not be included because of filter: ${filters[i]}`)
                 return false
             }
         }
@@ -60,7 +59,7 @@ const CityTerritoryContainer = (props) => {
         setLoading(false);
     }, [getCityJobs] )
 
-    if(!loading && jobs !== null) {
+    if(!loading && jobs !== null && typeof jobs.map === 'function') {
         return (
             <>
                 <div className="city-header">

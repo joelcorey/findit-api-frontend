@@ -26,8 +26,10 @@ function filter() {
         'Two individuals needed as partners in a web hosting business.',
         'Help Get Financing for a Letter of Credit that I Receive from Overseas', // Hello scammer!'
         'I NEED CODEIGNITER EXPERT', // Nothing wrong with CodeIgniter per say, but this post was just silly
-
-        '5 Minute Virtual Fitness Survey (paid).',
+        'Suggestions to fix the country',
+        'Promote Texbot Ai Earn 100.00 A Day From Home',
+        'Online research study for young adult smokers',
+        'Looking for low-voltage expert',
 
     ];
 }
