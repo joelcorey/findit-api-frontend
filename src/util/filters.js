@@ -27,6 +27,8 @@ function filter() {
         'Help Get Financing for a Letter of Credit that I Receive from Overseas', // Hello scammer!'
         'I NEED CODEIGNITER EXPERT', // Nothing wrong with CodeIgniter per say, but this post was just silly
 
+        '5 Minute Virtual Fitness Survey (paid).',
+
     ];
 }
 

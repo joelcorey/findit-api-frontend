@@ -39,10 +39,11 @@ const CityTerritoryContainer = (props) => {
     function checkFilters(jobTitle) {
         for (let i = 0; i < filters.length; i++) {
             if(typeof jobTitle.includes === 'function' && jobTitle.includes(filters[i])) {
-                return true
+                console.log(`jobTitle: ${jobTitle} supposed to not be included because of filter: ${filters[i]}`)
+                return false
             }
         }
-        return false;
+        return true;
     }
 
     function checkKeywords(jobTitle) {
