@@ -1,12 +1,22 @@
 function keywords() {
     return [
-        "api",
+        "application",
         "app",
+
+        "api",
+        "cloud",
         "automation",
         
         "html",
         "css",
         "dev",
+        
+        "Full-Stack",
+        "Fullstack",
+        "Postgres",
+        "PostgreSQL",
+        "MySQL",
+        "SQL",
         
         "integration",
         "javascript",
