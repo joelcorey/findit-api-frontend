@@ -37,13 +37,22 @@ const CityTerritoryContainer = (props) => {
     }
 
     function checkFilters(jobTitle) {
+        for (let i = 0; i < filters.length; i++) {
+            if(!jobTitle.includes(filters[i])) {
+                return true
+            }
+        }
+        return false;
+    }
+
+    function checkKeywords(jobTitle) {
         for (let i = 0; i < keywords.length; i++) {
             if(jobTitle.includes(keywords[i])) {
                 return true
             }
         }
         return false;
-    }
+    }   
 
     useEffect(() => {
         setJobs(getCityJobs.response);
@@ -63,6 +72,7 @@ const CityTerritoryContainer = (props) => {
                         if (
                             compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast 
                             && checkFilters(job.resultTitleText)
+                            //&& checkKeywords(job.resultTitleText)
                         ) {
                             return <ResultInfo 
                                 key={i}
