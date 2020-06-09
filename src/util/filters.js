@@ -79,7 +79,31 @@ function filter() {
         'Weight Loss Competition Mobile App',
         'GREAT WORK FROM HOME OPPORTUNITY FOR MARKETERS!!!',
         '"GET PAID TO TEXT"',
-
+        'Scheduling Interviews Today!',
+        'Want a career in IT or Tech? We can help',
+        'Work From Home - PT or FT',
+        'Focus Group - Mock Jury',
+        'needed :: defensive technical computer specialist',
+        'Scheduling Interviews Today!',
+        'Travel,work,play...',
+        'Are you a Tech Expert? Get paid for your advice! (Work From Home)',
+        'Website Admin Wanted Monroe LA BIG PERKS',
+        'Website Admin Needed in MONROE LA',
+        'Interviewing Today - PT or FT',
+        'WRITE ME A 5 STAR REVIEW!',
+        'Work your own hours in sales from home',
+        'Mental Health Services - Business Partner',
+        'Seeking Cook/Expediter',
+        'Assistant for Rare Coin/ Card Store',
+        'Get Paid To Receive Mail',
+        'Remote Call Center Job',
+        '$5 amazon voucher for 15 mins chat with rideshare driver & freelancers',
+        'Become a home based travel agent',
+        'Covid 19 Cure - Work from Home $10 an hour.',
+        'Get paid to share my videos!',
+        'WORK ON CELL PH. Relief From COVID-19',
+        'IT / Phone Installation Help Needed ASAP - Pay Cash',
+        
 
     ];
 }

@@ -71,8 +71,8 @@ const CityTerritoryContainer = (props) => {
                     {jobs.map((job, i) => {
                         if (
                             compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast 
-                            && checkFilters(job.resultTitleText)
-                            //&& checkKeywords(job.resultTitleText)
+                            //&& checkFilters(job.resultTitleText)
+                            && checkKeywords(job.resultTitleText)
                         ) {
                             return <ResultInfo 
                                 key={i}
