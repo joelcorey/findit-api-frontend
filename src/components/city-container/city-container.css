@@ -1,6 +1,7 @@
 .city-header {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .city-header-item {
@@ -14,11 +15,11 @@
 }
 
 .city-loading {
-    border: 5px solid #2d6374; 
-    border-top: 5px solid #d7d8da; 
+    border: 3px solid #2d6374; 
+    border-top: 3px solid #d7d8da; 
     border-radius: 50%;
-    width: 1vh;
-    height: 1vh;
+    width: .5vh;
+    height: .5vh;
     animation: spin 2s linear infinite;
 }
 
