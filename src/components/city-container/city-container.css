@@ -15,12 +15,12 @@
 }
 
 .city-loading {
-    border: 3px solid #2d6374; 
-    border-top: 3px solid #d7d8da; 
+    border: 2px solid #2d6374; 
+    border-top: 2px solid #d7d8da; 
     border-radius: 50%;
-    width: .5vh;
-    height: .5vh;
-    animation: spin 2s linear infinite;
+    width: .7vh;
+    height: .7vh;
+    animation: spin 4s linear infinite;
 }
 
 .no-result-info-item {
