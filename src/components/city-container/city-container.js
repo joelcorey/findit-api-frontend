@@ -37,9 +37,10 @@ const CityTerritoryContainer = (props) => {
     }
 
     function checkFilters(jobTitle) {
-        
+        let title = jobTitle.toLowerCase();
         for (let i = 0; i < filters.length; i++) {
-            if(typeof jobTitle.includes === 'function' && jobTitle.includes(filters[i])) {
+            let filter = filters[i].toLowerCase();
+            if(typeof jobTitle.includes === 'function' && title.includes(filter)) {
                 return false
             }
         }
