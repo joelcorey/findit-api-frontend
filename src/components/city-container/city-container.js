@@ -37,6 +37,7 @@ const CityTerritoryContainer = (props) => {
     }
 
     function checkFilters(jobTitle) {
+        
         for (let i = 0; i < filters.length; i++) {
             if(typeof jobTitle.includes === 'function' && jobTitle.includes(filters[i])) {
                 return false
@@ -46,8 +47,9 @@ const CityTerritoryContainer = (props) => {
     }
 
     function checkKeywords(jobTitle) {
+        let title = jobTitle.toLowerCase();
         for (let i = 0; i < keywords.length; i++) {
-            if(typeof jobTitle.includes === 'function' && jobTitle.includes(keywords[i])) {
+            if(typeof jobTitle.includes === 'function' && title.includes(keywords[i])) {
                 return true
             }
         }
@@ -72,7 +74,7 @@ const CityTerritoryContainer = (props) => {
                         if (
                             compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast 
                             && checkFilters(job.resultTitleText)
-                            //&& checkKeywords(job.resultTitleText)
+                            && checkKeywords(job.resultTitleText)
                         ) {
                             return <ResultInfo 
                                 key={i}
