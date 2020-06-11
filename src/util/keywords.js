@@ -7,12 +7,6 @@ function keywords() {
         "cloud",
         "automation",
         
-        "html",
-        "css",
-        "dev",
-        
-        "Full-Stack",
-        "Fullstack",
         "Postgres",
         "PostgreSQL",
         "MySQL",
@@ -40,11 +34,24 @@ function keywords() {
         "site",
         "web",
         "website",
-      
+        "html",
+        "css",
+        "dev",
+        "Full-Stack",
+        "Fullstack",
+        "entry",
+        "junior",
+        "web",
+        "developer",
+        "programmer",
+        "programming",
+
         "sheets",
         "google",
         "airtable",
-      
+        "quickbase",
+        "tableau",
+
         "contentful",
         "wordpress",
         "square", // squarespace

@@ -13,7 +13,7 @@ const CityTerritoryContainer = (props) => {
     const [ jobs, setJobs ] = useState()
     const [ isCurrentState, setIsCurrentState ] = useState();
 
-    const daysInPast = 0;
+    const daysInPast = 1;
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
     const momentMonth = momentTime.format('M');
@@ -71,8 +71,8 @@ const CityTerritoryContainer = (props) => {
                     {jobs.map((job, i) => {
                         if (
                             compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast 
-                            //&& checkFilters(job.resultTitleText)
-                            && checkKeywords(job.resultTitleText)
+                            && checkFilters(job.resultTitleText)
+                            //&& checkKeywords(job.resultTitleText)
                         ) {
                             return <ResultInfo 
                                 key={i}
@@ -92,13 +92,17 @@ const CityTerritoryContainer = (props) => {
             </>
         )
     }
+    // if(!loading) {
+    //     return (
+    //         <div></div>
+    //     )
+    // }
     return (
         <div className="city-header">
             <div className="city-loading" />
             <div className="city-header-item">{props.territory}</div>
             <div className="city-header-item">{props.city}</div>
             <div className="city-header-item city-header-url">{props.url}</div>
-            {/* <div className="no-result-info-item">No results found</div> */}
         </div>
     )
     

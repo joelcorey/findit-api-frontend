@@ -82,6 +82,7 @@ const CityTerritoryContainer = (props) => {
                 <div className="city-territory-container-item">city count: {props.cityCount}</div>
             </div>
         </div>
+        // <div></div>
     )
     
 }
