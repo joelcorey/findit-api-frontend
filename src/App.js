@@ -15,7 +15,7 @@ function App() {
 		//"/d/accounting-finance/search/acc", // accounting - finance
 		//"/d/admin-office/search/ofc", // admin - office
 		//"/d/architect-engineer-cad/search/egr", // architect - engineer - cad
-		//"/d/art-media-design/search/med", // art - media - design
+		"/d/art-media-design/search/med", // art - media - design
 		//"/d/science-biotech/search/sci", // biotech - science
 		//"/d/business-mgmt/search/bus", // business - mgmt
 		//"/d/customer-service/search/csr", // customer service
@@ -38,7 +38,7 @@ function App() {
 		//"/d/skilled-trades-artisan/search/trd", // skilled trade - artisan
 		"/d/software-qa-dba-etc/search/sof",  // software - qa - dba - etc
 		"/d/systems-networking/search/sad", // systems - networking
-		//"/d/technical-support/search/tch", // technical support
+		"/d/technical-support/search/tch", // technical support
 		//"/d/transportation/search/trp", // transport
 		//"/d/tv-film-video-radio/search/tfr", // tv - film - video - radio
 		"/d/web-html-info-design/search/web",  // web - info design
