@@ -43,12 +43,9 @@ function filter() {
         "Online Advertise",
         "Online Marketing",
         "Telemarketing",
-<<<<<<< HEAD
         "Marketing Assistant",
         "Ad Sales",
-=======
         "Digital Marketing Opportunity",
->>>>>>> 4ae68ba1e24f0f03e3fad4a6927d57c04201ac8a
         
         // Travel related
         "Travel Coordinator",
