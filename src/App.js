@@ -15,7 +15,7 @@ function App() {
 		//"/d/accounting-finance/search/acc", // accounting - finance
 		//"/d/admin-office/search/ofc", // admin - office
 		//"/d/architect-engineer-cad/search/egr", // architect - engineer - cad
-		"/d/art-media-design/search/med", // art - media - design
+		//"/d/art-media-design/search/med", // art - media - design
 		//"/d/science-biotech/search/sci", // biotech - science
 		//"/d/business-mgmt/search/bus", // business - mgmt
 		//"/d/customer-service/search/csr", // customer service
