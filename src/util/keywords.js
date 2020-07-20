@@ -64,16 +64,13 @@ function keywords() {
         "quickbase",
         "quick base",
         "tableau",
-<<<<<<< HEAD
         "script",
         "utility",
         "app",
-=======
         "smartsheets",
         "smart sheets",
         "servicenow",
         "service now",
->>>>>>> 4ae68ba1e24f0f03e3fad4a6927d57c04201ac8a
 
         "contentful",
         "wordpress",
