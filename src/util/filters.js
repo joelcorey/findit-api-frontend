@@ -13,10 +13,9 @@ function filter() {
         "Have a Facebook profile",
         "Receptionist",
         
-        "5 Minute",
-        "Survey",
+        "5 minute",
+        "survey",
         
-        "Customer Service",
         "customer service",
         
         "online survey",
@@ -44,7 +43,9 @@ function filter() {
         "Online Advertise",
         "Online Marketing",
         "Telemarketing",
-
+        "Marketing Assistant",
+        "Ad Sales",
+        
         // Travel related
         "Travel Coordinator",
         "Travel Booking",
@@ -68,8 +69,12 @@ function filter() {
         "Paralegal",
         "Labor omnia vincit!",
         "Flooring installer",
+        "Electrical Apprenticeship",
+        "Restaurant Depot",
+        "APPT",
+        "FROM YOUR CELL PHONE",
+        "Appointment Setter",
 
-        
         // LONG TARGETED - UNWANTED PHRASES
         "IT/Cybersecurity Training Grants with Job Placement Assistance.", // Semi-applicable but a bit spammy as this job posting had 30 plus postings .. all of which show up in the scraped results
         "Work Safely from Home, Online, Paid Weekly",
@@ -170,8 +175,24 @@ function filter() {
         "Product Management Fellowship",
         "For $79.97 you can remove collections, turn a 400 credit score to 750+",
         "$50 Usability Workshops on 6/16",
+        "Become a Certified Cloud Architect Professional",
+        "Cloud Architect Career *ACT NOW*",
+        "Independent Associates - Work Remotely",
+        "Part Time Hustle - Remote Work From Home",
+        "Appliance Repair Specialist",
+        "Work Remote, $450-$1500 per week, 🚫 Cold Calling 🚫 MLM",
+        "Have you ever applied/wanted to apply for a loan as a gig worker?",
+        "REMOTE ONLINE - Send SMS Messages",
+        "Become a Certified Linux+DevOps Professional",
+        "Click on Websites/ 40 Clicks for $20 Per Month",
+        "NEXT ONLINE DATA CABLE INFO SESSION, JULY 21ST, APPLY NOW!!",
+        "$30 Social Media Set Up - REAPPLY IF YOU DID NOT RECEIVE A RESPONSE",
+        "iPhone Mobile Application Testing Inside Shopping Malls: $25/hour",
+        "NOW! Hiring Full-Time Auto Technician up to $25/hr. Paid Weekly!",
+        "Work From Home With Your PC or Mobile Device!",
+        
 
-
+        
     ];
 }
 

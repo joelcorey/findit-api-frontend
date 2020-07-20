@@ -6,7 +6,12 @@ function keywords() {
         "api",
         "cloud",
         "automation",
-        
+        "automated",
+        "auto",
+        "import",
+        "data",
+        "data entry",
+
         "Postgres",
         "PostgreSQL",
         "MySQL",
@@ -14,7 +19,9 @@ function keywords() {
         
         "integration",
         "javascript",
+        "js",
         "node",
+        "node.js",
         
         "php",
       
@@ -26,7 +33,9 @@ function keywords() {
       
         "remote",
         "telecommute",
-      
+        //"freelance",
+        //"freelancer",
+
         "script",  
         "ubuntu",
         "linux",
@@ -34,23 +43,28 @@ function keywords() {
         "site",
         "web",
         "website",
+        "webmaster",
+        "web master",
         "html",
         "css",
         "dev",
+        "developer",
         "Full-Stack",
         "Fullstack",
         "entry",
         "junior",
-        "web",
-        "developer",
         "programmer",
         "programming",
 
+        "sheet",
         "sheets",
         "google",
         "airtable",
         "quickbase",
         "tableau",
+        "script",
+        "utility",
+        "app",
 
         "contentful",
         "wordpress",
