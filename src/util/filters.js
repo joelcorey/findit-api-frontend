@@ -43,8 +43,12 @@ function filter() {
         "Online Advertise",
         "Online Marketing",
         "Telemarketing",
+<<<<<<< HEAD
         "Marketing Assistant",
         "Ad Sales",
+=======
+        "Digital Marketing Opportunity",
+>>>>>>> 4ae68ba1e24f0f03e3fad4a6927d57c04201ac8a
         
         // Travel related
         "Travel Coordinator",
@@ -74,6 +78,13 @@ function filter() {
         "APPT",
         "FROM YOUR CELL PHONE",
         "Appointment Setter",
+
+        "Earn MONEY:",
+        "MARKETERS!!!",
+
+        "yelp", // Yelp sucks
+
+
 
         // LONG TARGETED - UNWANTED PHRASES
         "IT/Cybersecurity Training Grants with Job Placement Assistance.", // Semi-applicable but a bit spammy as this job posting had 30 plus postings .. all of which show up in the scraped results
@@ -192,7 +203,7 @@ function filter() {
         "Work From Home With Your PC or Mobile Device!",
         
 
-        
+
     ];
 }
 
