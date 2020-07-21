@@ -7,7 +7,7 @@
     display: flex;
     font-family: Arial;
     padding: .5vh;
-    margin: .5vh;
+    margin: 1px 0;
 }
 
 .result-info-item {
