@@ -8,13 +8,11 @@ const ResultInfo = (props) => {
             <div className="result-info-date">{props.month}-{props.day}-{props.year}</div>
             <div className="result-info-time"> {props.timeString}</div>
             <div className="result-info-item result-info-link">
-
-                {/* standard way of linking */}
                 <a href={props.url} target="_blank">
                     {props.title}
                 </a>
-
             </div>
+            <div>{props.city} {props.territory}</div>
         </div>
     );
 }

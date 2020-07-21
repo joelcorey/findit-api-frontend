@@ -61,7 +61,7 @@ const CityTerritoryContainer = (props) => {
         setJobs(getCityJobs.response);
         setLoading(false);
     }, [getCityJobs] )
-
+    // console.log(props)
     if(!loading && jobs !== null && typeof jobs.map === 'function') {
         return (
             <>
@@ -79,6 +79,8 @@ const CityTerritoryContainer = (props) => {
                         ) {
                             return <ResultInfo 
                                 key={i}
+                                territory={props.territory}
+                                city={props.city}
                                 title={job.resultTitleText}
                                 url={job.resultTitleHref}
                                 dateTitle={job.date.dateTitle}
