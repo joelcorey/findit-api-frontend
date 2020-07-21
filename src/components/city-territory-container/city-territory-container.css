@@ -1,10 +1,9 @@
 .city-territory-container {
-    
     padding: .5vh;
     margin: .5vh;
-    border-style: solid;
+    /* border-style: solid;
     border-width: 1px;
-    border-color: black;
+    border-color: black; */
 }
 
 .city-territory-container-header {
