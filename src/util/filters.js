@@ -203,8 +203,10 @@ function filter() {
         "Automotive Technician",
         "A.I. Sports Startup seeks talented iOS engineer [remote position]", // normally good, post is spammy
         "Entry Level IT - Contract Position - Printer Installation",
-        
+        "Auto Mechanic Needed!!!",
+        "Entry Level IT - Printer Installation Project",
 
+        
     ];
 }
 
