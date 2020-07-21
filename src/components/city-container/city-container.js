@@ -65,11 +65,11 @@ const CityTerritoryContainer = (props) => {
     if(!loading && jobs !== null && typeof jobs.map === 'function') {
         return (
             <>
-                <div className="city-header">
+                {/* <div className="city-header">
                     <div className="city-header-item">{props.territory}</div>
                     <div className="city-header-item">{props.city}</div>
                     <div className="city-header-item city-header-url">{props.url}</div>
-                </div>
+                </div> */}
                 <div>
                     {jobs.map((job, i) => {
                         if (
@@ -107,6 +107,7 @@ const CityTerritoryContainer = (props) => {
             <div className="city-header-item">{props.city}</div>
             <div className="city-header-item city-header-url">{props.url}</div>
         </div>
+
     )
     
 }
