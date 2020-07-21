@@ -12,7 +12,8 @@ const ResultInfo = (props) => {
                     {props.title}
                 </a>
             </div>
-            <div>{props.city} {props.territory}</div>
+            <div className="result-info-city">{props.city} </div>
+            <div className="result-info-territory">{props.territory}</div>
         </div>
     );
 }
