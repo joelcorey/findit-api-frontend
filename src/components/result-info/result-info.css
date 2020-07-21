@@ -32,6 +32,7 @@
 
 .result-info-territory {
     display: flex;
+    width: 20vw;
     color: #596163;
 }
 
