@@ -57,6 +57,11 @@ const CityTerritoryContainer = (props) => {
         return false;
     }   
 
+    // todo: remove duplicate urls
+    // function checkUrls() {
+
+    // }
+
     useEffect(() => {
         setJobs(getCityJobs.response);
         setLoading(false);
