@@ -198,8 +198,12 @@ function filter() {
         "iPhone Mobile Application Testing Inside Shopping Malls: $25/hour",
         "NOW! Hiring Full-Time Auto Technician up to $25/hr. Paid Weekly!",
         "Work From Home With Your PC or Mobile Device!",
+        "Make $50 With A Few Clicks - Business Development",
+        "cPanel - Linux Technical Analyst", // normally this would be good .. but holy crap batman.. can you say SPAM !!
+        "Automotive Technician",
+        "A.I. Sports Startup seeks talented iOS engineer [remote position]", // normally good, post is spammy
+        "Entry Level IT - Contract Position - Printer Installation",
         
-
 
     ];
 }
