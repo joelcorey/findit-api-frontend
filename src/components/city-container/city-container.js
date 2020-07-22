@@ -58,9 +58,15 @@ const CityTerritoryContainer = (props) => {
     }   
 
     // todo: remove duplicate urls
-    // function checkUrls() {
-
-    // }
+    function checkUniqueUrl(url) {
+        // for (let i = 0; i < jobs.length; i++) {
+        //     if(jobs[i].resultTitleHref === url) {
+        //         console.log(`Non-unqiue URL found: ${jobs[i].resultTitleHref}`);
+        //         return false;
+        //     }
+        // }
+        return true;
+    }
 
     useEffect(() => {
         setJobs(getCityJobs.response);
@@ -70,17 +76,13 @@ const CityTerritoryContainer = (props) => {
     if(!loading && jobs !== null && typeof jobs.map === 'function') {
         return (
             <>
-                {/* <div className="city-header">
-                    <div className="city-header-item">{props.territory}</div>
-                    <div className="city-header-item">{props.city}</div>
-                    <div className="city-header-item city-header-url">{props.url}</div>
-                </div> */}
                 <div>
                     {jobs.map((job, i) => {
                         if (
                             compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast 
                             && checkFilters(job.resultTitleText)
                             && checkKeywords(job.resultTitleText)
+                            && checkUniqueUrl(job.resultTitleHref)
                         ) {
                             return <ResultInfo 
                                 key={i}
