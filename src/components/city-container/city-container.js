@@ -8,11 +8,6 @@ import keywords from '../../util/keywords';
 import ResultInfo from '../result-info/result-info';
 
 const CityTerritoryContainer = (props) => {
-
-    const [ loading, setLoading ] = useState(true)
-    const [ jobs, setJobs ] = useState()
-    const [ isCurrentState, setIsCurrentState ] = useState();
-
     const daysInPast = 1;
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
@@ -21,6 +16,7 @@ const CityTerritoryContainer = (props) => {
     const momentTimeString = moment(`${momentYear}-${momentMonth}-${momentDay}`, 'YYYY-MM-DD');
 
     let getCityJobs = [];
+    let urls = []
 
     if(props.currentState === props.territor) {
         getCityJobs = props.useFetch('http://localhost:8000/jobs',
@@ -58,21 +54,44 @@ const CityTerritoryContainer = (props) => {
     }   
 
     // todo: remove duplicate urls
-    function checkUniqueUrl(url) {
-        // for (let i = 0; i < jobs.length; i++) {
-        //     if(jobs[i].resultTitleHref === url) {
-        //         console.log(`Non-unqiue URL found: ${jobs[i].resultTitleHref}`);
-        //         return false;
-        //     }
-        // }
-        return true;
-    }
+    // function checkUniqueUrl(url) {
+    //     for (let i = 0; i < uniqueUrls.length; i++) {
+    //         if(jobs[i].resultTitleHref === uniqueUrls[i]) {
+    //             console.log(`Non-unqiue URL found: ${jobs[i].resultTitleHref}`);
+    //             return false;
+    //         }
+    //         uniqueUrls.push(jobs[i].resultTitleHref)
+    //     }
+    //     return true;
+    // }
 
+     /* 
+    Skip applying an effect if getCityJobs has not updated
+    see getCityJobs = props.useFetch()
+    */
+    const [ loading, setLoading ] = useState(true)
+    const [ jobs, setJobs ] = useState()
     useEffect(() => {
         setJobs(getCityJobs.response);
         setLoading(false);
     }, [getCityJobs] )
-    // console.log(props)
+
+    /*
+    Naming here is a bit off, this is used to track ALL URLs.
+    If result to be rendered has href that is in this array,
+    then don't render
+    */
+    // const [ uniqueUrls, setUniqueUrls ] = useState([]);
+    // useEffect(() => {
+    //     let newUniqueUrls = uniqueUrls;
+    //     newUniqueUrls.push(urls);
+    //     setUniqueUrls(uniqueUrls.push())
+    // });
+
+    /* 
+    If done loading, jobs not empy, and is an array because it has
+    the map function, then render results
+    */
     if(!loading && jobs !== null && typeof jobs.map === 'function') {
         return (
             <>
@@ -82,7 +101,7 @@ const CityTerritoryContainer = (props) => {
                             compareDates(job.date.year, job.date.month, job.date.day) <= daysInPast 
                             && checkFilters(job.resultTitleText)
                             && checkKeywords(job.resultTitleText)
-                            && checkUniqueUrl(job.resultTitleHref)
+                            // && checkUniqueUrl(job.resultTitleHref)
                         ) {
                             return <ResultInfo 
                                 key={i}
@@ -97,18 +116,16 @@ const CityTerritoryContainer = (props) => {
                                 month={job.date.month}
                                 day={job.date.day}
                             />
-                        }
-                       
+                        }   
                     })}
                 </div>
             </>
         )
     }
-    // if(!loading) {
-    //     return (
-    //         <div></div>
-    //     )
-    // }
+
+    /*
+    If loading then render placeholder loading divs
+    */
     return (
         <div className="city-header">
             <div className="city-loading" />
@@ -116,9 +133,7 @@ const CityTerritoryContainer = (props) => {
             <div className="city-header-item">{props.city}</div>
             <div className="city-header-item city-header-url">{props.url}</div>
         </div>
-
-    )
-    
+    ) 
 }
 
 export default CityTerritoryContainer;

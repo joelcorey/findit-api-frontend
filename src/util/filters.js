@@ -81,7 +81,8 @@ function filter() {
 
         "yelp", // Yelp sucks
         "AUTO TECH",
-
+        "Casinos",
+        "no capital expense",
 
 
         // LONG TARGETED - UNWANTED PHRASES
@@ -117,6 +118,10 @@ function filter() {
         "Entry Level IT - Printer Installation Project",
         "5 Seats Left: Get Paid to Get your HSE (Remote to Onsite)",
         "5 Seats Left: Get Paid to Learn Digital Marketing (Remote to Onsite)",
+        "$25 gig for helping list a business in Google",
+        "Entry Level Computer Technician Apprentice",
+        "Security Guard",
+        "Become a Top Certified DevOps Engineer",
         
         
     ];
