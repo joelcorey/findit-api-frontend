@@ -83,7 +83,15 @@ function filter() {
         "AUTO TECH",
         "Casinos",
         "no capital expense",
-
+        "apple",
+        "CNC Programmer",
+        "AUTO MECHANIC",
+        "hvac",
+        "hustle",
+        "content",
+        "social media",
+        "paid research",
+        
 
         // LONG TARGETED - UNWANTED PHRASES
         "Digital & Affiliate Marketing",
@@ -122,7 +130,9 @@ function filter() {
         "Entry Level Computer Technician Apprentice",
         "Security Guard",
         "Become a Top Certified DevOps Engineer",
-        
+        "Google/Facebook Ads",
+        "WEBINAR FACILITATOR",
+        "App Creators Needed Asap!",
         
     ];
 }
