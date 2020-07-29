@@ -8,7 +8,7 @@ import keywords from '../../util/keywords';
 import ResultInfo from '../result-info/result-info';
 
 const CityTerritoryContainer = (props) => {
-    const daysInPast = 1;
+    const daysInPast = 0;
     const momentTime = moment();
     const momentYear  = momentTime.format('YYYY');
     const momentMonth = momentTime.format('M');

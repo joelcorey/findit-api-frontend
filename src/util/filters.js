@@ -91,7 +91,8 @@ function filter() {
         "content",
         "social media",
         "paid research",
-        
+        "support",
+        "no experience needed",
 
         // LONG TARGETED - UNWANTED PHRASES
         "Digital & Affiliate Marketing",

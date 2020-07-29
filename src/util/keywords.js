@@ -1,8 +1,5 @@
 function keywords() {
     return [
-        "application",
-        "app",
-
         "api",
         "cloud",
         "automation",
@@ -35,17 +32,8 @@ function keywords() {
         "ubuntu",
         "linux",
       
-        "website",
-        "webmaster",
-        "web master",
         "html",
         "css",
-        "Full-Stack",
-        "Fullstack",
-        "entry",
-        "junior",
-        "programmer",
-        "programming",
 
         "sheet",
         "sheets",
