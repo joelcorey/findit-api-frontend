@@ -93,6 +93,8 @@ function filter() {
         "paid research",
         "support",
         "no experience needed",
+        "Swift",
+        "casino",
 
         // LONG TARGETED - UNWANTED PHRASES
         "Digital & Affiliate Marketing",
